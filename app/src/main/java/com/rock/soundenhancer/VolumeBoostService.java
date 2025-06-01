@@ -60,24 +60,25 @@ public class VolumeBoostService extends Service {
 
         private void startEnhancing() {
             // Boost overall volume
-            enhancer = new LoudnessEnhancer(0);
-            enhancer.setTargetGain(1000);
-            enhancer.setEnabled(true);
 
             // Optional: add Equalizer to emphasize mid frequencies (voice)
 
-            eq = new Equalizer(0, 0);
+        /*    eq = new Equalizer(0, 0);
             eq.setEnabled(true);
 
             short bands = eq.getNumberOfBands();
             for (short i = 0; i < bands; i++) {
                 int freq = eq.getCenterFreq(i) / 1000;
                 if (freq >= 300 && freq <= 3000) {
-                    eq.setBandLevel(i, (short) 500); // boost mids
+                    eq.setBandLevel(i, eq.getBandLevelRange()[1]); // boost mids
                 } else {
-                    eq.setBandLevel(i, (short) -500); // reduce highs/lows
+                    eq.setBandLevel(i, eq.getBandLevelRange()[0]); // reduce highs/lows
                 }
-            }
+            }*/
+                enhancer = new LoudnessEnhancer(0);
+                enhancer.setTargetGain(1200);
+                enhancer.setEnabled(true);
+
         }
 
 
