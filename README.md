@@ -1,5 +1,7 @@
-`# Sound Enhancer - Clearer & Louder Sound for Android
+
 ![ic_launcher_round](https://github.com/user-attachments/assets/3d1eb16d-4db5-4fbc-8dd2-9ee271ffed48)
+
+# Sound Enhancer - Clearer & Louder Sound for Android
 
 ## Overview
 Sound Enhancer is a lightweight Android app designed to improve your phone's audio experience by boosting volume and enhancing sound clarity. It is especially useful for devices with low sound output or less clear speakers.
