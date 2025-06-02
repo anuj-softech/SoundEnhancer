@@ -28,19 +28,18 @@ public class VolumeBoostService extends Service {
         String action = intent != null ? intent.getAction() : null;
 
         if ("TOGGLE".equals(action)) {
+            updateNotification();
             if (isBoosting) stopBoost();
             else startBoost();
         } else if ("START".equals(action)) {
+            updateNotification();
             startBoost();
         } else if ("STOP".equals(action)) {
+            updateNotification();
             stopBoost();
         } else if ("STATUS".equals(action)) {
             broadcastStatus();
-        } else {
-            startBoost();
         }
-
-        updateNotification();
         return START_STICKY;
     }
 
@@ -97,7 +96,6 @@ public class VolumeBoostService extends Service {
         isBoosting = false;
         stopForeground(true);
         broadcastStatus();
-        stopSelf();
     }
 
     private Notification buildNotification() {
